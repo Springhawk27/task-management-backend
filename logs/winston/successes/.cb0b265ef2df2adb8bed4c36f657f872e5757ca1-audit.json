@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/sazzadmahmud/Documents/0 Next Level Web Development/Job Placement/Job Assignment/Task Management/task-management-backend/logs/winston/successes/.cb0b265ef2df2adb8bed4c36f657f872e5757ca1-audit.json",
+    "files": [
+        {
+            "date": 1699130380000,
+            "name": "/Users/sazzadmahmud/Documents/0 Next Level Web Development/Job Placement/Job Assignment/Task Management/task-management-backend/logs/winston/successes/tm-2023-11-05-02-success.log",
+            "hash": "846de3c629fa00270e757e72944f4a75822060af7b58920b5fb519fa3fb7a7c5"
+        }
+    ],
+    "hashType": "sha256"
+}
