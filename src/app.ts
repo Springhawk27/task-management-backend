@@ -1,11 +1,25 @@
-/* eslint-disable no-unused-vars */
-import express, { Application } from 'express';
+import express, { Application, Request, Response } from 'express';
+import cors from 'cors';
+import usersRouter from './app/modules/user/user.route';
+import userService from './app/modules/user/user.service';
 const app: Application = express();
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const port = 3000;
+app.use(cors());
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+// parser
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Application Routes
+app.use('/api/v1/users/', usersRouter);
+
+// testing
+app.get('/', async (req: Request, res: Response) => {
+  await userService.createUser({
+    // id: '999',
+    // password: '1234',
+    role: 'user',
+  });
+  res.send('Working Successfully!');
 });
 
 export default app;
