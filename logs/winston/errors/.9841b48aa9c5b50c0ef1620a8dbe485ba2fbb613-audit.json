@@ -1,15 +1,15 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
-    },
-    "auditLog": "/Users/sazzadmahmud/Documents/0 Next Level Web Development/Job Placement/Job Assignment/Task Management/task-management-backend/logs/winston/errors/.9841b48aa9c5b50c0ef1620a8dbe485ba2fbb613-audit.json",
-    "files": [
-        {
-            "date": 1699130380005,
-            "name": "/Users/sazzadmahmud/Documents/0 Next Level Web Development/Job Placement/Job Assignment/Task Management/task-management-backend/logs/winston/errors/tm-2023-11-05-02-error.log",
-            "hash": "21f9686ef8d4fb7c239d721eb0b51b47ac0977ef91b5a9cc9156dcc17e7a3a51"
-        }
-    ],
-    "hashType": "sha256"
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "/Users/sazzadmahmud/Documents/0 Next Level Web Development/Job Placement/Job Assignment/Task Management/task-management-backend/logs/winston/errors/.9841b48aa9c5b50c0ef1620a8dbe485ba2fbb613-audit.json",
+  "files": [
+    {
+      "date": 1699130380005,
+      "name": "/Users/sazzadmahmud/Documents/0 Next Level Web Development/Job Placement/Job Assignment/Task Management/task-management-backend/logs/winston/errors/tm-2023-11-05-02-error.log",
+      "hash": "21f9686ef8d4fb7c239d721eb0b51b47ac0977ef91b5a9cc9156dcc17e7a3a51"
+    }
+  ],
+  "hashType": "sha256"
 }
