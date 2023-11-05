@@ -24,6 +24,18 @@ const createTask = async (req: Request, res: Response) => {
   }
 };
 
+const getSingleTask = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id;
+  const result = await TaskService.getSingleTask(id);
+
+  sendResponse<ITask>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Task Retrieved Successfully',
+    data: result,
+  });
+});
+
 // update task
 const updateTask = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id;
@@ -53,6 +65,7 @@ const deleteTask = catchAsync(async (req: Request, res: Response) => {
 
 export const TaskController = {
   createTask,
+  getSingleTask,
   updateTask,
   deleteTask,
 };

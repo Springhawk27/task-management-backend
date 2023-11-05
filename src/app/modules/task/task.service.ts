@@ -15,6 +15,12 @@ const createTask = async (task: ITask): Promise<ITask | null> => {
   return createdTask;
 };
 
+// get single task
+const getSingleTask = async (id: string): Promise<ITask | null> => {
+  const result = await Task.findById(id);
+  return result;
+};
+
 // update task service
 const updateTask = async (
   id: string,
@@ -34,6 +40,7 @@ const deleteTask = async (id: string): Promise<ITask | null> => {
 
 export const TaskService = {
   createTask,
+  getSingleTask,
   updateTask,
   deleteTask,
 };

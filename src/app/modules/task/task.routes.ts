@@ -10,6 +10,8 @@ router.post(
   validateRequest(TaskValidation.createTaskZodSchema),
   TaskController.createTask,
 );
+router.get('/:id', TaskController.getSingleTask);
+
 router.patch(
   '/:id',
   validateRequest(TaskValidation.updateTaskZodSchema),
