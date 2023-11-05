@@ -20,6 +20,6 @@ const createUser = async (req: Request, res: Response) => {
   }
 };
 
-export default {
+export const UserController = {
   createUser,
 };
