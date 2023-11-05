@@ -10,5 +10,6 @@ router.post(
   validateRequest(TaskValidation.createTaskZodSchema),
   TaskController.createTask,
 );
+router.delete('/:id', TaskController.deleteTask);
 
 export const TaskRoutes = router;

@@ -15,6 +15,13 @@ const createTask = async (task: ITask): Promise<ITask | null> => {
   return createdTask;
 };
 
+// delete task
+const deleteTask = async (id: string): Promise<ITask | null> => {
+  const result = await Task.findByIdAndDelete(id);
+  return result;
+};
+
 export const TaskService = {
   createTask,
+  deleteTask,
 };
