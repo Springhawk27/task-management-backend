@@ -15,6 +15,17 @@ const createTask = async (task: ITask): Promise<ITask | null> => {
   return createdTask;
 };
 
+// update task service
+const updateTask = async (
+  id: string,
+  payload: Partial<ITask>,
+): Promise<ITask | null> => {
+  const result = await Task.findOneAndUpdate({ _id: id }, payload, {
+    new: true,
+  });
+  return result;
+};
+
 // delete task
 const deleteTask = async (id: string): Promise<ITask | null> => {
   const result = await Task.findByIdAndDelete(id);
@@ -23,5 +34,6 @@ const deleteTask = async (id: string): Promise<ITask | null> => {
 
 export const TaskService = {
   createTask,
+  updateTask,
   deleteTask,
 };
