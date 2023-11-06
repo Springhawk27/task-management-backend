@@ -4,3 +4,7 @@ export type ITask = {
   title: string;
   description: string;
 };
+
+export type ITaskFilters = {
+  searchTerm?: string;
+};

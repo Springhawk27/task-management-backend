@@ -18,5 +18,6 @@ router.patch(
   TaskController.updateTask,
 );
 router.delete('/:id', TaskController.deleteTask);
+router.get('/', TaskController.getAllTasks);
 
 export const TaskRoutes = router;

@@ -1,8 +1,11 @@
 // users.controller.ts
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
+import { paginationFields } from '../../../constants/pagination';
 import catchAsync from '../../../shared/catchAsync';
+import pick from '../../../shared/pick';
 import sendResponse from '../../../shared/sendResponse';
+import { taskFilterableFields } from './task.constant';
 import { ITask } from './task.interface';
 import { TaskService } from './task.service';
 
@@ -23,6 +26,24 @@ const createTask = async (req: Request, res: Response) => {
     });
   }
 };
+
+const getAllTasks = catchAsync(async (req: Request, res: Response) => {
+  // search filter
+  // const filters = pick(req.query, ['searchTerm', 'title', 'code', 'year']);
+  const filters = pick(req.query, taskFilterableFields);
+  // pagination options
+  const paginationOptions = pick(req.query, paginationFields);
+
+  const result = await TaskService.getAllTask(filters, paginationOptions);
+
+  sendResponse<ITask[]>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Tasks Retrieved Successfully',
+    meta: result.meta,
+    data: result.data,
+  });
+});
 
 const getSingleTask = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id;
@@ -65,6 +86,7 @@ const deleteTask = catchAsync(async (req: Request, res: Response) => {
 
 export const TaskController = {
   createTask,
+  getAllTasks,
   getSingleTask,
   updateTask,
   deleteTask,
